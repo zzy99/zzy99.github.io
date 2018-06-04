@@ -224,136 +224,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zzy99.github.io/2018/06/04/001/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="朱政烨">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="四度空间">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/04/001/" itemprop="url">kaggle入门 | Digit Recognizer准确度100%</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T00:00:00+08:00">
-                2018-06-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://s1.ax1x.com/2018/06/04/C7SqeI.md.png" alt="C7SqeI.md.png"><br>MNIST可以说是深度学习领域的“Helloworld”了,而kaggle上面正好有这样的项目Digit Recognizer,于是就拿这个熟悉卷积神经网络的搭建了。</p>
-<p>下面是基于Keras的实现代码（文件路径请修改，参数可以微调）<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">import numpy <span class="keyword">as</span> np</span><br><span class="line">import tensorflow <span class="keyword">as</span> tf</span><br><span class="line">import pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> keras.models import Sequential</span><br><span class="line"><span class="keyword">from</span> keras.layers import Dense, Activation, Conv2D</span><br><span class="line"><span class="keyword">from</span> keras.layers import MaxPool2D, Flatten, Dropout, ZeroPadding2D, BatchNormalization</span><br><span class="line"><span class="keyword">from</span> keras.utils import np_utils</span><br><span class="line">import keras</span><br><span class="line"><span class="keyword">from</span> keras.models import save_model, load_model</span><br><span class="line"><span class="keyword">from</span> keras.models import Model</span><br><span class="line"></span><br><span class="line"><span class="meta">#1 加载数据集，对数据集进行处理，把输入和结果分开</span></span><br><span class="line">df = pd.read_csv(<span class="string">'c:/Users/80431/Desktop/mnist_train.csv'</span>)</span><br><span class="line">data = df.as_matrix() <span class="meta">#data = np.array(df)</span></span><br><span class="line"></span><br><span class="line">df = None</span><br><span class="line"></span><br><span class="line">roundnum=<span class="number">5</span></span><br><span class="line"><span class="function"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="title">range</span>(<span class="params">roundnum</span>):</span></span><br><span class="line"><span class="function">    #打乱顺序</span></span><br><span class="line"><span class="function">    np.random.<span class="title">shuffle</span>(<span class="params">data</span>)</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    x_train </span>= data[:,<span class="number">1</span>:]</span><br><span class="line"></span><br><span class="line">    <span class="meta">#把训练的图片数据转化成28*28的图片</span></span><br><span class="line">    x_train = x_train.reshape(data.shape[<span class="number">0</span>],<span class="number">28</span>,<span class="number">28</span>,<span class="number">1</span>).astype(<span class="string">'float32'</span>)</span><br><span class="line">    x_train = x_train/<span class="number">255</span></span><br><span class="line">    <span class="meta">#把训练的图片进行one-hot编码</span></span><br><span class="line">    y_train = np_utils.to_categorical(data[:,<span class="number">0</span>],<span class="number">10</span>).astype(<span class="string">'float32'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="meta">#2 设相关参数</span></span><br><span class="line">    <span class="meta">#设置对训练集的批次大小</span></span><br><span class="line">    batch_size = <span class="number">1024</span></span><br><span class="line">    <span class="meta">#设置卷积滤镜个数</span></span><br><span class="line">    n_filter = <span class="number">32</span></span><br><span class="line">    <span class="meta">#设置最大池化，池化核大小</span></span><br><span class="line">    pool_size = (<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="meta">#3 定义网络，安照zeropadding,巻积层，规范层，池化层进行设置</span></span><br><span class="line">    <span class="meta">#这里用了relu激活函数</span></span><br><span class="line">    cnn_net = Sequential()</span><br><span class="line"></span><br><span class="line">    cnn_net.<span class="keyword">add</span>(Conv2D(<span class="number">32</span>, kernel_size = (<span class="number">3</span>,<span class="number">3</span>), strides = (<span class="number">1</span>,<span class="number">1</span>),input_shape = (<span class="number">28</span>,<span class="number">28</span>,<span class="number">1</span>)))</span><br><span class="line">    cnn_net.<span class="keyword">add</span>(Activation(<span class="string">'relu'</span>))</span><br><span class="line">    cnn_net.<span class="keyword">add</span>(BatchNormalization(epsilon = <span class="number">1e-6</span>, axis = <span class="number">1</span>))</span><br><span class="line">    cnn_net.<span class="keyword">add</span>(MaxPool2D(pool_size = pool_size))</span><br><span class="line"></span><br><span class="line">    cnn_net.<span class="keyword">add</span>(ZeroPadding2D((<span class="number">1</span>,<span class="number">1</span>)))</span><br><span class="line">    cnn_net.<span class="keyword">add</span>(Conv2D(<span class="number">48</span>, kernel_size = (<span class="number">3</span>,<span class="number">3</span>)))</span><br><span class="line">    cnn_net.<span class="keyword">add</span>(Activation(<span class="string">'relu'</span>))</span><br><span class="line">    cnn_net.<span class="keyword">add</span>(BatchNormalization(epsilon = <span class="number">1e-6</span>, axis = <span class="number">1</span>))</span><br><span class="line">    cnn_net.<span class="keyword">add</span>(MaxPool2D(pool_size = pool_size))</span><br><span class="line"></span><br><span class="line">    cnn_net.<span class="keyword">add</span>(ZeroPadding2D((<span class="number">1</span>,<span class="number">1</span>)))</span><br><span class="line">    cnn_net.<span class="keyword">add</span>(Conv2D(<span class="number">64</span>, kernel_size = (<span class="number">2</span>,<span class="number">2</span>)))</span><br><span class="line">    cnn_net.<span class="keyword">add</span>(Activation(<span class="string">'relu'</span>))</span><br><span class="line">    cnn_net.<span class="keyword">add</span>(BatchNormalization(epsilon = <span class="number">1e-6</span>, axis = <span class="number">1</span>))</span><br><span class="line">    cnn_net.<span class="keyword">add</span>(MaxPool2D(pool_size = pool_size))</span><br><span class="line"></span><br><span class="line">    cnn_net.<span class="keyword">add</span>(Dropout(<span class="number">0.25</span>))</span><br><span class="line">    cnn_net.<span class="keyword">add</span>(Flatten())</span><br><span class="line"></span><br><span class="line">    cnn_net.<span class="keyword">add</span>(Dense(<span class="number">3168</span>))</span><br><span class="line">    cnn_net.<span class="keyword">add</span>(Activation(<span class="string">'relu'</span>))</span><br><span class="line"></span><br><span class="line">    cnn_net.<span class="keyword">add</span>(Dense(<span class="number">10</span>))</span><br><span class="line">    cnn_net.<span class="keyword">add</span>(Activation(<span class="string">'softmax'</span>))</span><br><span class="line"></span><br><span class="line">    <span class="meta">#4 查看网络结构</span></span><br><span class="line">    cnn_net.summary()</span><br><span class="line"></span><br><span class="line">    <span class="meta">#from keras.utils.vis_utils import plot_model, model_to_dot</span></span><br><span class="line">    <span class="meta">#from Ipython.display import Image, SVG</span></span><br><span class="line">    <span class="meta">##可视化模型</span></span><br><span class="line">    <span class="meta">#SVG(model_to_dot(cnn_net).create(prog='dot',format='svg'))</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">#5 训练模型，保存模型</span></span><br><span class="line">    cnn_net.compile(optimizer=<span class="string">'rmsprop'</span>,</span><br><span class="line">                  loss=<span class="string">'binary_crossentropy'</span>,</span><br><span class="line">                  metrics=[<span class="string">'accuracy'</span>])</span><br><span class="line">    cnn_net = load_model(<span class="string">'d:/kaggle/digit/cnn_net_model2.h5'</span>)</span><br><span class="line">    print(<span class="string">'开始训练'</span>)</span><br><span class="line">    cnn_net.fit(x_train,y_train,batch_size=batch_size,epochs=<span class="number">5</span>,verbose=<span class="number">1</span>,validation_split=<span class="number">0.1</span>)</span><br><span class="line">    print(<span class="string">'训练结束'</span>)</span><br><span class="line">    cnn_net.save(<span class="string">'d:/kaggle/digit/cnn_net_model2.h5'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">#训练用1-5，预测用67(分别注释掉不用的部分即可)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#6 加载模型</span></span><br><span class="line">cnn_net = load_model(<span class="string">'d:/kaggle/digit/cnn_net_model2.h5'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">#7 生成提交预测结果</span></span><br><span class="line">df = pd.read_csv(<span class="string">'d:/kaggle/digit/test.csv'</span>)</span><br><span class="line">x_valid = df.values.astype(<span class="string">'float32'</span>)</span><br><span class="line">n_valid = x_valid.shape[<span class="number">0</span>]</span><br><span class="line">x_valid = x_valid.reshape(n_valid,<span class="number">28</span>,<span class="number">28</span>,<span class="number">1</span>)</span><br><span class="line">x_valid = x_valid/<span class="number">255</span></span><br><span class="line"></span><br><span class="line">y_pred = cnn_net.predict_classes(x_valid,batch_size=<span class="number">32</span>,verbose=<span class="number">1</span>)</span><br><span class="line">np.savetxt(<span class="string">'d:/kaggle/digit/DeepConvNN2.csv'</span>,np.c_[range(<span class="number">1</span>,len(y_pred)+<span class="number">1</span>),y_pred],delimiter=<span class="string">','</span>,header=<span class="string">'ImageId,Label'</span>,comments=<span class="string">''</span>,fmt=<span class="string">'%d'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>看完你也许会问，这么水的一个简单CNN，怎么可能准确度100%？</p>
-<p>确实，若是直接训练了再预测，只能拿到0.994左右（排名前20%）。</p>
-<p>于是我想神经网络很依赖于大数据，那么怎么再给它更多的呢？</p>
-<p>第一，是可以扩展数据，比如翻转缩放等操作后继续喂进去。</p>
-<p>第二，嘿嘿，直接用<a href="http://yann.lecun.com/exdb/mnist/" title="MNIST的官方数据" target="_blank" rel="noopener">MNIST的官方数据</a>！</p>
-<p><a href="https://imgchr.com/i/C7SHOA" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/06/04/C7SHOA.md.png" alt="C7SHOA.md.png"></a></p>
-<p>这四个全下载并解压，然后转成两个csv，方法可见：<a href="https://blog.csdn.net/albert201605/article/details/79893585" title="MNIST数据集转化为CSV格式" target="_blank" rel="noopener">MNIST数据集转化为CSV格式</a></p>
-<p>然后其实那10000个test数据带有标签，也是可以用来训练的，于是又想到把这两个合成一个7w行的csv，然后用这个数据替代kaggl的数据训练！</p>
-<p>果然，训练了几十次，再去预测，准确率达到了100%！<br><a href="https://imgchr.com/i/C7S7yd" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2018/06/04/C7S7yd.png" alt="C7S7yd.png"></a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zzy99.github.io/2018/06/04/Helloworld/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -424,11 +294,139 @@
 
       
         
-          
-            <p><img src="http://p1.qqyou.com/pic/UploadPic/2014-10/3/2014100311121377837.jpg" alt=""></p>
+          <p><img src="http://p1.qqyou.com/pic/UploadPic/2014-10/3/2014100311121377837.jpg" alt=""></p>
 <p>第一次用hexo搭建博客，忙了好久终于弄出来了~<br>以后会发布一些干货/随想吧</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/04/Helloworld/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zzy99.github.io/2018/06/04/001/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="朱政烨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="四度空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/04/001/" itemprop="url">kaggle入门 | Digit Recognizer准确度100%</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T00:00:00+08:00">
+                2018-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="https://s1.ax1x.com/2018/06/04/C7SqeI.md.png" alt="C7SqeI.md.png"><br>MNIST可以说是深度学习领域的“Helloworld”了,而kaggle上面正好有这样的项目Digit Recognizer,于是就拿这个熟悉卷积神经网络的搭建了。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/04/001/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
