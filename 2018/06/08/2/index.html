@@ -71,16 +71,45 @@
 
 
 
-<meta name="description" content="To Be Stronger">
-<meta property="og:type" content="website">
-<meta property="og:title" content="四度空间">
-<meta property="og:url" content="https://zzy99.github.io/index.html">
+<meta name="description" content="如果要选几个 2017 年最火的流行词，绝对有人工智能和虚拟货币。英国程序员 David Sheehan 就被比特币这种颠覆性的技术以及过山车式的价格涨跌留下了深刻印象，虽然他自己一个币也没有，但还是想用机器学习技术预测一下比特币这种虚拟货币的价格。  *提醒：不应将本文视为投资建议，也希望大家不要轻易靠这种方法投资虚拟货币，本文只是分享我自己对于如何用深度学习技术预测虚拟货币价格的一个思路。理财">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用深度学习技术预测虚拟货币价格(转自知乎)">
+<meta property="og:url" content="https://zzy99.github.io/2018/06/08/2/index.html">
 <meta property="og:site_name" content="四度空间">
-<meta property="og:description" content="To Be Stronger">
+<meta property="og:description" content="如果要选几个 2017 年最火的流行词，绝对有人工智能和虚拟货币。英国程序员 David Sheehan 就被比特币这种颠覆性的技术以及过山车式的价格涨跌留下了深刻印象，虽然他自己一个币也没有，但还是想用机器学习技术预测一下比特币这种虚拟货币的价格。  *提醒：不应将本文视为投资建议，也希望大家不要轻易靠这种方法投资虚拟货币，本文只是分享我自己对于如何用深度学习技术预测虚拟货币价格的一个思路。理财">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-597a43f4e0171bf4412bf5194727e146_hd.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-eafd05098123dea9da60133906aac688_180x120.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-62b4dbbba1317bfa32fd72a697260b9a_ipico.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-4aba411eae24c0df5b2faedc3888a4b3_hd.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-24e981ec68160383723c927da6ab4ec2_hd.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-f68cab764415b0c0b2e61a9b6b89d006_hd.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-15ef18851b9fbab2ab3d61d563b43748_hd.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-3bc1450e605b5f9c0ce5417a2de8ac93_hd.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-15ef18851b9fbab2ab3d61d563b43748_hd.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-67de4ff95d7476bd5f6c3aeafccbd1b5_hd.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-9ea8d9cc981a34d14f002e1811c38943_hd.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-77635657667017776556c205a43d3e3f_hd.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-bc7a5a06b99c879c752de3889d8f4102_hd.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-87c0f25d1ce622a389a6fa5c2b57ba1b_hd.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-71f742bd44e815c9f92a6288a227ca4a_b.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-e26e19527d684e96ca7f378f072111db_180x120.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-a4378c70b78b5dfad4ad030f9baf4e27_hd.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-3f6de62b8591a51e137c088fb2217342_hd.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-e26e19527d684e96ca7f378f072111db_180x120.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-e65d570228e0fdd421c143071912e151_hd.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-90a37affc47f216fc115bc9ac0fb2ade_hd.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-95d0911469abaf877d1bca25c31792b6_hd.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-62b4dbbba1317bfa32fd72a697260b9a_ipico.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-ef845556f2a97d4eedbd7453555e9f66_hd.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-4291529f880a494b6084f74437867210_hd.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-6eebed2f1594d90818d557e58f6d8653_hd.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-62b4dbbba1317bfa32fd72a697260b9a_ipico.jpg">
+<meta property="og:updated_time" content="2018-06-07T16:11:06.702Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="四度空间">
-<meta name="twitter:description" content="To Be Stronger">
+<meta name="twitter:title" content="用深度学习技术预测虚拟货币价格(转自知乎)">
+<meta name="twitter:description" content="如果要选几个 2017 年最火的流行词，绝对有人工智能和虚拟货币。英国程序员 David Sheehan 就被比特币这种颠覆性的技术以及过山车式的价格涨跌留下了深刻印象，虽然他自己一个币也没有，但还是想用机器学习技术预测一下比特币这种虚拟货币的价格。  *提醒：不应将本文视为投资建议，也希望大家不要轻易靠这种方法投资虚拟货币，本文只是分享我自己对于如何用深度学习技术预测虚拟货币价格的一个思路。理财">
+<meta name="twitter:image" content="https://pic4.zhimg.com/80/v2-597a43f4e0171bf4412bf5194727e146_hd.jpg">
 
 
 
@@ -110,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="https://zzy99.github.io/"/>
+  <link rel="canonical" href="https://zzy99.github.io/2018/06/08/2/"/>
 
 
 
 
 
-  <title>四度空间</title>
+  <title>用深度学习技术预测虚拟货币价格(转自知乎) | 四度空间</title>
   
 
 
@@ -135,8 +164,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -219,9 +247,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -251,9 +279,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/08/2/" itemprop="url">用深度学习技术预测虚拟货币价格(转自知乎)</a></h2>
+          <h2 class="post-title" itemprop="name headline">用深度学习技术预测虚拟货币价格(转自知乎)</h2>
         
 
         <div class="post-meta">
@@ -347,9 +373,7 @@
       
 
       
-        
-          
-            <p>如果要选几个 2017 年最火的流行词，绝对有<strong>人工智能</strong>和<strong>虚拟货币</strong>。英国程序员 David Sheehan 就被比特币这种颠覆性的技术以及过山车式的价格涨跌留下了深刻印象，虽然他自己一个币也没有，但还是想用机器学习技术预测一下比特币这种虚拟货币的价格。</p>
+        <p>如果要选几个 2017 年最火的流行词，绝对有<strong>人工智能</strong>和<strong>虚拟货币</strong>。英国程序员 David Sheehan 就被比特币这种颠覆性的技术以及过山车式的价格涨跌留下了深刻印象，虽然他自己一个币也没有，但还是想用机器学习技术预测一下比特币这种虚拟货币的价格。</p>
 <p><img src="https://pic4.zhimg.com/80/v2-597a43f4e0171bf4412bf5194727e146_hd.jpg" alt="img"></p>
 <p><strong>*提醒：不应将本文视为投资建议，也希望大家不要轻易靠这种方法投资虚拟货币，本文只是分享我自己对于如何用深度学习技术预测虚拟货币价格的一个思路。理财有风险，投资需谨慎，有涨就有跌，请量力而行。*</strong></p>
 <hr>
@@ -434,8 +458,6 @@
 <p>如果你想自己从头创建一个 LSTM 模型，可这里获取所有 Python 代码</p>
 <p><a href="https://github.com/dashee87/blogScripts/blob/master/Jupyter/2017-11-20-predicting-cryptocurrency-prices-with-deep-learning.ipynb" target="_blank" rel="noopener">dashee87/blogScripts</a><img src="https://pic3.zhimg.com/v2-62b4dbbba1317bfa32fd72a697260b9a_ipico.jpg" alt="图标"></p>
 
-          
-        
       
     </div>
     
@@ -445,6 +467,35 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏~</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="朱政烨 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="朱政烨 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
@@ -452,180 +503,43 @@
       
 
       
-
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zzy99.github.io/2018/06/04/001/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="朱政烨">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="四度空间">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/04/001/" itemprop="url">kaggle入门 | Digit Recognizer准确度100%</a></h2>
+        <div class="post-widgets">
         
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T00:00:00+08:00">
-                2018-06-04
-              </time>
-            
+        
 
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-05T22:21:20+08:00">
-                2018-06-05
-              </time>
-            
-          </span>
-
+        
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/kaggle/" itemprop="url" rel="index">
-                    <span itemprop="name">kaggle</span>
-                  </a>
-                </span>
-
-                
-                
-              
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
             </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/06/04/001/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/04/001/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="https://s1.ax1x.com/2018/06/04/C7SqeI.md.png" alt="C7SqeI.md.png"><br>MNIST可以说是深度学习领域的“Helloworld”了,而kaggle上面正好有这样的项目Digit Recognizer,于是就拿这个熟悉卷积神经网络的搭建了。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/04/001/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-          <!--/noindex-->
         
+        </div>
       
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/04/001/" rel="next" title="kaggle入门 | Digit Recognizer准确度100%">
+                <i class="fa fa-chevron-left"></i> kaggle入门 | Digit Recognizer准确度100%
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -635,179 +549,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zzy99.github.io/2018/06/04/Helloworld/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="朱政烨">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="四度空间">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/04/Helloworld/" itemprop="url">Helloworld</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T00:00:00+08:00">
-                2018-06-04
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-05T22:20:28+08:00">
-                2018-06-05
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂/" itemprop="url" rel="index">
-                    <span itemprop="name">杂</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/06/04/Helloworld/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/04/Helloworld/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="/images/helloworld.jpg" alt=""></p>
-<p>第一次用hexo搭建博客，忙了好久终于弄出来了~<br>以后会发布一些干货/随想吧</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/04/Helloworld/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -815,6 +561,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -835,8 +588,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -913,6 +675,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取数据"><span class="nav-number">1.</span> <span class="nav-text">获取数据</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1088,6 +866,10 @@ setInterval("createtime()",250);
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
