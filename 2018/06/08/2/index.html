@@ -71,45 +71,34 @@
 
 
 
-<meta name="description" content="如果要选几个 2017 年最火的流行词，绝对有人工智能和虚拟货币。英国程序员 David Sheehan 就被比特币这种颠覆性的技术以及过山车式的价格涨跌留下了深刻印象，虽然他自己一个币也没有，但还是想用机器学习技术预测一下比特币这种虚拟货币的价格。  *提醒：不应将本文视为投资建议，也希望大家不要轻易靠这种方法投资虚拟货币，本文只是分享我自己对于如何用深度学习技术预测虚拟货币价格的一个思路。理财">
+<meta name="description" content="教会机器通过深度学习和自我博弈学习玩《四子连珠》游戏（Connect4）。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用深度学习技术预测虚拟货币价格(转自知乎)">
+<meta property="og:title" content="用Python和Keras搭建你自己的AlphaZero（转自景略集智）">
 <meta property="og:url" content="https://zzy99.github.io/2018/06/08/2/index.html">
 <meta property="og:site_name" content="四度空间">
-<meta property="og:description" content="如果要选几个 2017 年最火的流行词，绝对有人工智能和虚拟货币。英国程序员 David Sheehan 就被比特币这种颠覆性的技术以及过山车式的价格涨跌留下了深刻印象，虽然他自己一个币也没有，但还是想用机器学习技术预测一下比特币这种虚拟货币的价格。  *提醒：不应将本文视为投资建议，也希望大家不要轻易靠这种方法投资虚拟货币，本文只是分享我自己对于如何用深度学习技术预测虚拟货币价格的一个思路。理财">
+<meta property="og:description" content="教会机器通过深度学习和自我博弈学习玩《四子连珠》游戏（Connect4）。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-597a43f4e0171bf4412bf5194727e146_hd.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/v2-eafd05098123dea9da60133906aac688_180x120.jpg">
-<meta property="og:image" content="https://pic3.zhimg.com/v2-62b4dbbba1317bfa32fd72a697260b9a_ipico.jpg">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-4aba411eae24c0df5b2faedc3888a4b3_hd.jpg">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-24e981ec68160383723c927da6ab4ec2_hd.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-f68cab764415b0c0b2e61a9b6b89d006_hd.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-15ef18851b9fbab2ab3d61d563b43748_hd.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-3bc1450e605b5f9c0ce5417a2de8ac93_hd.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-15ef18851b9fbab2ab3d61d563b43748_hd.jpg">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-67de4ff95d7476bd5f6c3aeafccbd1b5_hd.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-9ea8d9cc981a34d14f002e1811c38943_hd.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-77635657667017776556c205a43d3e3f_hd.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-bc7a5a06b99c879c752de3889d8f4102_hd.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-87c0f25d1ce622a389a6fa5c2b57ba1b_hd.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/v2-71f742bd44e815c9f92a6288a227ca4a_b.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/v2-e26e19527d684e96ca7f378f072111db_180x120.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-a4378c70b78b5dfad4ad030f9baf4e27_hd.jpg">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-3f6de62b8591a51e137c088fb2217342_hd.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/v2-e26e19527d684e96ca7f378f072111db_180x120.jpg">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-e65d570228e0fdd421c143071912e151_hd.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-90a37affc47f216fc115bc9ac0fb2ade_hd.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-95d0911469abaf877d1bca25c31792b6_hd.jpg">
-<meta property="og:image" content="https://pic3.zhimg.com/v2-62b4dbbba1317bfa32fd72a697260b9a_ipico.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-ef845556f2a97d4eedbd7453555e9f66_hd.jpg">
-<meta property="og:image" content="https://pic3.zhimg.com/80/v2-4291529f880a494b6084f74437867210_hd.jpg">
-<meta property="og:image" content="https://pic4.zhimg.com/80/v2-6eebed2f1594d90818d557e58f6d8653_hd.jpg">
-<meta property="og:image" content="https://pic3.zhimg.com/v2-62b4dbbba1317bfa32fd72a697260b9a_ipico.jpg">
-<meta property="og:updated_time" content="2018-06-07T16:11:06.702Z">
+<meta property="og:image" content="https://jizhi-10061919.file.myqcloud.com/blog/19c47b3d840aebdb8a1029f22222836b.jpg">
+<meta property="og:image" content="https://jizhi-10061919.file.myqcloud.com/blog/2c806017f17181390a9a7f4eb0d173d1.jpg">
+<meta property="og:image" content="https://jizhi-10061919.file.myqcloud.com/blog/af9f5d5df0bf62bcd069a331a34a97f9.jpg">
+<meta property="og:image" content="https://jizhi-10061919.file.myqcloud.com/blog/4b2549a0552c570ae0f3646877de578a.jpg">
+<meta property="og:image" content="https://jizhi-10061919.file.myqcloud.com/blog/d57ddcb52c9711951aa3e3a58909e7b0.jpg">
+<meta property="og:image" content="https://jizhi-10061919.file.myqcloud.com/blog/966befa2185bedf16e584760bd255ead.jpg">
+<meta property="og:image" content="https://jizhi-10061919.file.myqcloud.com/blog/0dd3ac8572f1027e3ed78ff4b65e5551.jpg">
+<meta property="og:image" content="https://jizhi-10061919.file.myqcloud.com/blog/394b9da60d9589070f35d7177416a3d8.jpg">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/2/8/16174b0000501bb1?w=244&h=82&f=jpeg&s=6874">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/2/8/16174b104cecf8e2?w=1000&h=1012&f=jpeg&s=439756">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/2/8/16174b135b6b4dde?w=1000&h=381&f=jpeg&s=183358">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/2/8/16174b197c3fe043?w=781&h=512&f=jpeg&s=61188">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/2/8/16174b1d216f9034?w=914&h=1296&f=jpeg&s=178259">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/2/8/16174b258bc6f4a1?w=1000&h=1282&f=jpeg&s=598482">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/2/8/16174b2b685ce82c?w=1000&h=1352&f=jpeg&s=633602">
+<meta property="og:image" content="https://jizhi-10061919.file.myqcloud.com/blog/313a3d8dfe11bb4a8c7c7577f5e1091f.jpg">
+<meta property="og:updated_time" content="2018-06-07T16:30:40.626Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用深度学习技术预测虚拟货币价格(转自知乎)">
-<meta name="twitter:description" content="如果要选几个 2017 年最火的流行词，绝对有人工智能和虚拟货币。英国程序员 David Sheehan 就被比特币这种颠覆性的技术以及过山车式的价格涨跌留下了深刻印象，虽然他自己一个币也没有，但还是想用机器学习技术预测一下比特币这种虚拟货币的价格。  *提醒：不应将本文视为投资建议，也希望大家不要轻易靠这种方法投资虚拟货币，本文只是分享我自己对于如何用深度学习技术预测虚拟货币价格的一个思路。理财">
-<meta name="twitter:image" content="https://pic4.zhimg.com/80/v2-597a43f4e0171bf4412bf5194727e146_hd.jpg">
+<meta name="twitter:title" content="用Python和Keras搭建你自己的AlphaZero（转自景略集智）">
+<meta name="twitter:description" content="教会机器通过深度学习和自我博弈学习玩《四子连珠》游戏（Connect4）。">
+<meta name="twitter:image" content="https://jizhi-10061919.file.myqcloud.com/blog/19c47b3d840aebdb8a1029f22222836b.jpg">
 
 
 
@@ -145,7 +134,7 @@
 
 
 
-  <title>用深度学习技术预测虚拟货币价格(转自知乎) | 四度空间</title>
+  <title>用Python和Keras搭建你自己的AlphaZero（转自景略集智） | 四度空间</title>
   
 
 
@@ -279,7 +268,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">用深度学习技术预测虚拟货币价格(转自知乎)</h2>
+          <h2 class="post-title" itemprop="name headline">用Python和Keras搭建你自己的AlphaZero（转自景略集智）</h2>
         
 
         <div class="post-meta">
@@ -307,7 +296,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-08T00:11:06+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-08T00:30:40+08:00">
                 2018-06-08
               </time>
             
@@ -373,90 +362,132 @@
       
 
       
-        <p>如果要选几个 2017 年最火的流行词，绝对有<strong>人工智能</strong>和<strong>虚拟货币</strong>。英国程序员 David Sheehan 就被比特币这种颠覆性的技术以及过山车式的价格涨跌留下了深刻印象，虽然他自己一个币也没有，但还是想用机器学习技术预测一下比特币这种虚拟货币的价格。</p>
-<p><img src="https://pic4.zhimg.com/80/v2-597a43f4e0171bf4412bf5194727e146_hd.jpg" alt="img"></p>
-<p><strong>*提醒：不应将本文视为投资建议，也希望大家不要轻易靠这种方法投资虚拟货币，本文只是分享我自己对于如何用深度学习技术预测虚拟货币价格的一个思路。理财有风险，投资需谨慎，有涨就有跌，请量力而行。*</strong></p>
-<hr>
-<p>在我（作者David Sheeran——译者注）写这篇文章之前，我到网上搜了搜，发现之前有人写过怎样用深度学习技术预测比特币价格，于是我想了想，决定除了比特币外，也预测另一种近来比较火的虚拟货币价格——以太坊，也叫以太币。</p>
-<p>我们会使用一个长短期记忆模型（LSTM），它是深度学习模型的一种，很适合处理时序数据，或者任何有暂时性、空间性和结构性顺序的数据，比如电影、语句等等。如果你对这种模型不是很熟悉，我推荐读一下这篇博客</p>
-<p><a href="http://blog.echen.me/2017/05/30/exploring-lstms/" target="_blank" rel="noopener">Exploring LSTMs</a><img src="https://pic1.zhimg.com/v2-eafd05098123dea9da60133906aac688_180x120.jpg" alt="图标"></p>
-<p>因为我也想让不太懂机器学习的读者愿意看下去，所以我会尽量不放大段大段的代码，请理解一下。要是你也想这么操作一波，我把数据和代码放在了 GitHub上，点击这里获取即可</p>
-<p><a href="https://github.com/dashee87/blogScripts/blob/master/Jupyter/2017-11-20-predicting-cryptocurrency-prices-with-deep-learning.ipynb" target="_blank" rel="noopener">dashee87/blogScripts</a><img src="https://pic3.zhimg.com/v2-62b4dbbba1317bfa32fd72a697260b9a_ipico.jpg" alt="图标"></p>
-<p>好了，废话不说，我们开始吧！</p>
-<h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a><strong>获取数据</strong></h2><p>在我们搭建模型之前，我们需要获取一些数据让模型学习。在 Kaggle 上有个数据集，详细记录了<strong>过去几年比特币每分钟的价格以及其他方面的数据</strong>（我之前看的那篇预测比特币价格的教程用的也是这个数据集）。但按照每分钟的时间尺度，会有很多噪声数据，所以我们选择每天的价格。这样就会产生一个问题：<strong>我们可能收集不到足够的数据</strong>（不过我们需要几百行而不是几百万行数据）。</p>
-<p><strong>需要强调的是：深度学习中，在严重缺乏数据的情况下，没有模型能取得成功。</strong></p>
-<p>我也不想依靠静态文件，因为在将来用新数据更新模型时它们会让更新过程无比复杂。相反，我们会从虚拟货币网站和 API 中获取数据。</p>
-<p>因为我们会将两种虚拟货币的价格混合在一个模型中，所以从一个数据源中提取数据可能是个好主意。我们会用到网站 <a href="https://link.zhihu.com/?target=http%3A//coinmarketcap.com/" target="_blank" rel="noopener">coinmarketcap.com</a> 当前我们只考虑比特币和以太坊的数据，但用这种方法再添加别的币种也不会太难。在我们导入数据前，我们必须加载一些 Python 包，让工作更容易些。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">import time</span><br><span class="line">import seaborn as sns</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import datetime</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line"># get market info for bitcoin from the start of 2016 to the current day</span><br><span class="line">bitcoin_market_info = pd.read_html(&quot;https://coinmarketcap.com/currencies/bitcoin/historical-data/?start=20130428&amp;end=&quot;+time.strftime(&quot;%Y%m%d&quot;))[0]</span><br><span class="line"># convert the date string to the correct date format</span><br><span class="line">bitcoin_market_info = bitcoin_market_info.assign(Date=pd.to_datetime(bitcoin_market_info[&apos;Date&apos;]))</span><br><span class="line"># when Volume is equal to &apos;-&apos; convert it to 0</span><br><span class="line">bitcoin_market_info.loc[bitcoin_market_info[&apos;Volume&apos;]==&quot;-&quot;,&apos;Volume&apos;]=0</span><br><span class="line"># convert to int</span><br><span class="line">bitcoin_market_info[&apos;Volume&apos;] = bitcoin_market_info[&apos;Volume&apos;].astype(&apos;int64&apos;)</span><br><span class="line"># look at the first few rows</span><br><span class="line">bitcoin_market_info.head()</span><br></pre></td></tr></table></figure>
-<p><img src="https://pic3.zhimg.com/80/v2-4aba411eae24c0df5b2faedc3888a4b3_hd.jpg" alt="img">图表标签：日期-开盘价-最高价-最低价-收盘价-容量-市值</p>
-<p>刚刚发生了什么呢？我们加载了一些 Python 包，然后导入了 <a href="https://link.zhihu.com/?target=http%3A//coinmarketcap.com/" target="_blank" rel="noopener">coinmarketcap.com</a> 上如上所示的这种数据表格。稍微清洗一下数据后，我们就会获得上面这个比特币价格表格。在 URL 里将 bitcoin 换成 ethereum 也能得到以太坊的价格数据。</p>
-<p>要想证明数据是准确的，我们可以绘制出两种货币价格和容量随着时间推移的变化情况：</p>
-<p><img src="https://pic3.zhimg.com/80/v2-24e981ec68160383723c927da6ab4ec2_hd.jpg" alt="img"></p>
-<p><img src="https://pic1.zhimg.com/80/v2-f68cab764415b0c0b2e61a9b6b89d006_hd.jpg" alt="img"></p>
-<p><strong>训练，测试和随机游走</strong></p>
-<p>我们已经获取了一些数据，那么我们先在需要一个模型。在深度学习中，数据通常被分为训练集和测试集两部分。我们用训练集让模型进行学习，然后用测试集评估模型的性能。对于时间序列模型，我们一般对一个时间序列进行预测，然后对另一个时间序列进行测试。比如，我把截止日期设为 2017 年 6 月 1 日，那么就会<strong>用在这个日期之前的时间训练模型</strong>，<strong>用这个日期之后的数据评估模型</strong>。</p>
-<p><img src="https://pic2.zhimg.com/80/v2-15ef18851b9fbab2ab3d61d563b43748_hd.jpg" alt="img"></p>
-<p>你可以看到训练时间大部分包含虚拟货币价格较低的时期。这样，训练数据或许无法代表测试数据，会损害模型泛化不可见数据的能力（你可以试着让数据更平稳些）。但干嘛让负面情况碍手碍脚呢？在使用我们的机器学习模型前，有必要讨论一个更简单些的模型。最基本的模型就是设定明天的价格等于今天的价格（我们称之为滞后模型）。我们在数学上以如下方式定义该模型：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-3bc1450e605b5f9c0ce5417a2de8ac93_hd.jpg" alt="img"></p>
-<p><img src="https://pic2.zhimg.com/80/v2-15ef18851b9fbab2ab3d61d563b43748_hd.jpg" alt="img"></p>
-<p>在互联网链接分析和金融股票市场中，当扩展一下这个简单的模型时，通常将价格当做随机游走（概念接近于<strong>布朗运动</strong>，是布朗运动的理想数学状态。指任何无规则行走者所带的守恒量都各自对应着一个扩散运输定律），那么在数学上可以将其进行如下定义：</p>
-<p><img src="https://pic3.zhimg.com/80/v2-67de4ff95d7476bd5f6c3aeafccbd1b5_hd.jpg" alt="img"></p>
-<p><img src="https://pic4.zhimg.com/80/v2-9ea8d9cc981a34d14f002e1811c38943_hd.jpg" alt="img"></p>
-<p>我们会从训练集中确定 μ 和 σ，将随机游走模型应用在比特币和以太坊的测试集上。</p>
-<p><img src="https://pic1.zhimg.com/80/v2-77635657667017776556c205a43d3e3f_hd.jpg" alt="img"></p>
-<p>哇哦！看看这些预测线。除了少许部分扭曲，基本上紧贴每个虚拟货币的实际价格变动情况。模型甚至捕捉到了 6 月中旬和 8 月下旬的暴涨状况。</p>
-<p>然而正如另一篇预测比特币价格的博客中所说，<strong>只在某个点预测未来的模型常常会让人误以为它很准确，因为在接下来的预测中模型没有将误差因素考虑在内。</strong>不管误差大小如何，它在每个时间点本质上会被重置，因为输入模型的是真实价格。比特币的随机游走尤其具有误导性，因为 y 轴的值可以很大，这让预测线看起来很平滑。</p>
-<p>不幸的是，单点预测在评估时序模型中相当普遍。所以通过多点预测衡量模型准确度是个更好的做法。这样以来，之前预测的误差不会被重置，而是会被计算入接下来的预测中。这样，我们在数学上这样定义：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-bc7a5a06b99c879c752de3889d8f4102_hd.jpg" alt="img"></p>
-<p>我们来获取我们的随机游走模型，预测整个测试集的收盘价格。</p>
-<p><img src="https://pic4.zhimg.com/80/v2-87c0f25d1ce622a389a6fa5c2b57ba1b_hd.jpg" alt="img"></p>
-<p>模型的预测对随机种子极其敏感。对于以太坊的预测，我选了一个完整的看起来正常的区间随机游走（如下gif图）。你也可以在 Jupyter Notebook 中处理下面这些随机种子值，看看情况有多糟糕。</p>
-<p><img src="https://pic4.zhimg.com/v2-71f742bd44e815c9f92a6288a227ca4a_b.jpg" alt="img"></p>
-<p>注意单点随机游走会一直看似十分准确，即便背后并无真实实体。<strong>因此，希望你对任何博客中预测出的货币价格都保持怀疑态度。想买虚拟货币的朋友别被市场预测报告给轻易忽悠了</strong>。</p>
-<p><strong>长短期记忆模型（LSTM）</strong></p>
-<p>在前文说过，我们会用到长短期记忆模型。但我们没必要从头开始自己搭建一个模型，现在有不少应用了多种深度学习算法的开源框架可供我们使用（比如 TensorFlow，Keras，PyTorch等）。我选的是 Keras，因为我发现它很适合像我这种水平不牛的人。</p>
-<p>如果你对 Keras 不熟悉，可以看看我写的这篇教程，或者其他人的教程都行。</p>
-<p><a href="https://dashee87.github.io/data%20science/deep%20learning/python/another-keras-tutorial-for-neural-network-beginners/" target="_blank" rel="noopener">Another Keras Tutorial For Neural Network Beginners</a><img src="https://pic4.zhimg.com/v2-e26e19527d684e96ca7f378f072111db_180x120.jpg" alt="图标"></p>
-<p>我创建了一个新的数据框架叫做 model_data。我将移出了之前的一些列（开盘价，每日最高价和最低价），重新表示了一些新列。Close_off_high 代表了当天收盘价和最高价之间的差额，其中值 -1 和 1 表示当天收盘价分别等于最低价和最高价。volatility 列是指被开盘价分开的最低价和最高价的不同。你可能也注意到 model_data 是按照最早时间到最近时间的顺序排列的。我们实际上并不需要日期列了，因为不需要再向模型中输入这项信息。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model_data.head()</span><br></pre></td></tr></table></figure>
-<p><img src="https://pic1.zhimg.com/80/v2-a4378c70b78b5dfad4ad030f9baf4e27_hd.jpg" alt="img"></p>
-<p>我们的长短期记忆模型会使用之前的数据（比特币和以太坊的都有）预测每种货币第二天的收盘价。我们必须决定模型需要获取之前多少天的数据。</p>
-<p>这个随意，我选择的是 10 天，因为 10 ……. 是个很好的整数。我们创建一个小型数据框架，包含连续 10 天的数据（称为窗口），所以第一个窗口会包含训练集的第 0-9 行（Python 是零索引），第二个窗口是 1-10 行，以此类推。选择一个小型窗口意味着我们可以将更多的窗口输入到模型中。下降趋势是指模型可能没有足够的信息来检测复杂的长期行为（如果出现这种情况）。</p>
-<p>深度学习模型不喜欢输入数据大幅变动。仔细看这些数据列，一些值介乎 -1 和 1 之间，而其它值则是百万规模。我们需要将数据正常化，所以我们的输入数据比较一致。通常，你会想让值在 -1 和 1 之间。Off_high 列和 volatility 列和之前一样好。对于剩余的列，和其它人的做法一样，我们会将输入数据正常化为窗口中的第一个值。</p>
-<p><img src="https://pic3.zhimg.com/80/v2-3f6de62b8591a51e137c088fb2217342_hd.jpg" alt="img"></p>
-<p>这个表格表示我们的长短期记忆模型输入的一个例子（我们实际上有几百个类似的表格）。我们已经将一些列正常化，因此它们的值在第一个时间点都等于 0，所以我们的目标是预测在该时间点的价格变化情况。我们现在准备好搭建 LSTM 模型了。用 Keras 搭建模型非常快速，将几个部件放在一起就行。我曾详细写了篇教程，可以参考</p>
-<p><a href="https://dashee87.github.io/data%20science/deep%20learning/python/another-keras-tutorial-for-neural-network-beginners/" target="_blank" rel="noopener">Another Keras Tutorial For Neural Network Beginners</a><img src="https://pic4.zhimg.com/v2-e26e19527d684e96ca7f378f072111db_180x120.jpg" alt="图标"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># import the relevant Keras modules</span><br><span class="line">from keras.models import Sequential</span><br><span class="line">from keras.layers import Activation, Dense</span><br><span class="line">from keras.layers import LSTM</span><br><span class="line">from keras.layers import Dropout</span><br><span class="line"></span><br><span class="line">def build_model(inputs, output_size, neurons, activ_func = &quot;linear&quot;,</span><br><span class="line">                dropout =0.25, loss=&quot;mae&quot;, optimizer=&quot;adam&quot;):</span><br><span class="line">    model = Sequential()</span><br><span class="line"></span><br><span class="line">    model.add(LSTM(neurons, input_shape=(inputs.shape[1], inputs.shape[2])))</span><br><span class="line">    model.add(Dropout(dropout))</span><br><span class="line"></span><br><span class="line">    model.add(Dense(units=output_size))</span><br><span class="line">    model.add(Activation(activ_func))</span><br><span class="line"></span><br><span class="line">    model.compile(loss=loss, optimizer=optimizer)</span><br><span class="line">    return model</span><br></pre></td></tr></table></figure>
-<p>因而，build_model 函数构建了一个空的模型（model = Sequential），添加了一个 LSTM 层。为了适应我们的输入（n x m 表格，其中 n 和 m 表示时间点/行和列的数值），该 LSTM 层经过了调整。函数还包含神经网络的一些特征，如 dropout 和激活函数等。现在，我们只需指明放入 LSTM 层中的神经元的数量（我选择的是 20 个），以及训练模型用的数据数量。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># random seed for reproducibility</span><br><span class="line">np.random.seed(202)</span><br><span class="line"># initialise model architecture</span><br><span class="line">eth_model = build_model(LSTM_training_inputs, output_size=1, neurons = 20)</span><br><span class="line"># model output is next price normalised to 10th previous closing price</span><br><span class="line">LSTM_training_outputs = (training_set[&apos;eth_Close&apos;][window_len:].values/training_set[&apos;eth_Close&apos;][:-window_len].values)-1</span><br><span class="line"># train model on data</span><br><span class="line"># note: eth_history contains information on the training error per epoch</span><br><span class="line">eth_history = eth_model.fit(LSTM_training_inputs, LSTM_training_outputs, </span><br><span class="line">                            epochs=50, batch_size=1, verbose=2, shuffle=True)</span><br><span class="line">#eth_preds = np.loadtxt(&apos;eth_preds.txt&apos;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Epoch 50/50</span><br><span class="line">6s - loss: 0.0625</span><br></pre></td></tr></table></figure>
-<p>现在我们已经搭建好了一个可以预测第二天以太坊收盘价的 LSTM 模型。我们看看它性能如何。我们首先用训练集检测它的性能（即 2017 年 6 月之前的数据）。代码下方的数字表示在第 50 次训练迭代（或 epoch）后，模型在训练集上的平均绝对误差。我们不看其中的变化了，我们可以看看模型输出的每天收盘价。</p>
-<p><img src="https://pic3.zhimg.com/80/v2-e65d570228e0fdd421c143071912e151_hd.jpg" alt="img"></p>
-<p>对于模型如此高的准确率，我们不应感到太惊讶。模型能获取其误差的来源，然后自行修正。实际上，要想实现几乎零误差训练也不是很难。只需添加几百个神经元训练上几千个 epoch 就行。我们更感兴趣的是模型在测试集上的表现，因为这代表了模型面临新数据时的预测效果。</p>
-<p><img src="https://pic4.zhimg.com/80/v2-90a37affc47f216fc115bc9ac0fb2ade_hd.jpg" alt="img"></p>
-<p>撇开我们上文说的单点预测的误导性不谈，我们搭建的这个 LSTM 模型好像在新数据上表现的还不错。最明显的错误之处是它没能检测出价格突然增高后不可避免的要下降的情况（比如 6 月中旬和 10 月）。实际上，这是个持续性的错误，只是在这些峰值处更加明显。预测的价格和第二天的价格基本上一致（例如 7 月中旬的价格下降）。另外，模型似乎系统性地高估了以太坊的未来价格，因为预测线始终在实际价格线的上方。我怀疑这是因为训练集代表的时间段正值以太坊价格飞涨，因此模型预估这个趋势会一直持续。我们也可以针对比特币的测试集，搭建一个相同的 LSTM 模型预测比特币的价格，如下图所示：</p>
-<p><img src="https://pic4.zhimg.com/80/v2-95d0911469abaf877d1bca25c31792b6_hd.jpg" alt="img"></p>
-<p>点击这里获取全部代码</p>
-<p><a href="https://github.com/dashee87/blogScripts/blob/master/Jupyter/2017-11-20-predicting-cryptocurrency-prices-with-deep-learning.ipynb" target="_blank" rel="noopener">dashee87/blogScripts</a><img src="https://pic3.zhimg.com/v2-62b4dbbba1317bfa32fd72a697260b9a_ipico.jpg" alt="图标"></p>
-<p>我前面强调过，单点预测具有误导性。那么在仔细看看，你会注意到预测值有规律地反应了之前的值（如 10 月份）。我们的深度学习 LSTM 模型在部分地方再生了一个顺序为 p 的自回归模型，在这些地方，未来的值就是之前 p 值的加权和。我们可以在数学上将自回归模型进行如下定义：</p>
-<p><img src="https://pic4.zhimg.com/80/v2-ef845556f2a97d4eedbd7453555e9f66_hd.jpg" alt="img"></p>
-<p>好消息是，时序任务通常都会用到自回归模型（比如股票预测），因此我们搭建的 LSTM 模型存在的这个问题可以有合理的解决方案。坏消息是 LSTM 能力的一种浪费，我们本可以用更少的时间搭建一个更简单的自回归模型，而且或许能达到同样的效果。模型更复杂并不等于有更高的准确率。</p>
-<p><img src="https://pic3.zhimg.com/80/v2-4291529f880a494b6084f74437867210_hd.jpg" alt="img"></p>
-<p>这样以来模型的预测很明显不如单点预测那么令人满意（如上图所示）。但是，我很高兴这个模型返回了一些很细微的举动（例如以太坊这张图的第二条线）。模型没有简单地预测价格朝同一个方向发展，所以我们有理由对模型持乐观态度。</p>
-<p>再回到单点预测部分，我们的深度学习神经网络看起来还不错，但是无聊的随机游走模型也很棒。和随机游走模型一样，LSTM 模型对选择的随机种子非常敏感（模型权重开始时随机设置）。所以，如果我们想比较这两个模型的话，我们可以让每个模型运行多次，比如 25 次，对模型误差有个估计。这个误差可以计算为测试集中实际收盘价和预测收盘价之间的差额。</p>
-<p><img src="https://pic4.zhimg.com/80/v2-6eebed2f1594d90818d557e58f6d8653_hd.jpg" alt="img"></p>
-<p>或许 AI 还是值得夸奖一番的！！这些图标显示了每个模型迭代 25 次后，在测试集上的误差。LSTM 模型对比特币和以太坊的预测误差分别为4%和5%，彻底碾压随机游走模型。</p>
-<p>只想打败随机游走模型太 low 了。我们可以将 LSTM 模型和更多的时序模型进行比较。比如自回归模型，ARIMA，加权平均法等。这个任务我们留给以后再做，你也可以自己试试。</p>
-<p>再说一下，希望谈到用深度学习预测虚拟货币价格时，大家都能保持一个怀疑的态度，因为技术并不是完美的。</p>
-<p><strong>总结</strong></p>
-<p>我们收集了一些虚拟货币的数据，将其输入一个超酷的长短期记忆模型中。不幸的是，模型的预测几乎只是重复之前的值。我们怎样能让模型更完善些呢?</p>
+        <p><img src="https://jizhi-10061919.file.myqcloud.com/blog/19c47b3d840aebdb8a1029f22222836b.jpg" alt=""></p>
+<p><strong>教会机器通过深度学习和自我博弈学习玩《四子连珠》游戏（Connect4）。</strong></p>
+<a id="more"></a>
+<p>在本文，我（作者 David Foster——译者注）会主要讲到以下三件事：</p>
 <ul>
-<li><strong>改变损失函数</strong>：平均绝对误差并不真的鼓励我们去冒险。例如，在绝对平方误差情况下，LSTM 模型会被迫将检测峰值视为更重要的事情。而且，更适合模型的损失函数会让模型不再那么保守。</li>
-<li><strong>抑制过于保守的自回归模型</strong>：这能激励深度学习算法去探索更有趣或更冒险的模型。这一步说起来容易，做起来难！</li>
-<li><strong>获取更多更好的数据：</strong>即便靠单单过去的价格就能很好地预测未来价格，我们还可以添加其它一些能提升模型预测能力的数据特征。这样，LSTM 模型就不必只依赖过去的价格数据了，可能还能解锁更复杂的功能的。这一步可能是最值得尝试但也最难的部分。</li>
+<li><p>AlphaZero 迈入人工智能一大步的两个原因。</p>
+</li>
+<li><p>你怎样可以搭建一个 AlphaZero 一样的AI玩《四子连珠》游戏。</p>
+</li>
+<li><p>你怎样可以将代码适用到其它游戏中。</p>
+</li>
 </ul>
-<p>如果你想自己从头创建一个 LSTM 模型，可这里获取所有 Python 代码</p>
-<p><a href="https://github.com/dashee87/blogScripts/blob/master/Jupyter/2017-11-20-predicting-cryptocurrency-prices-with-deep-learning.ipynb" target="_blank" rel="noopener">dashee87/blogScripts</a><img src="https://pic3.zhimg.com/v2-62b4dbbba1317bfa32fd72a697260b9a_ipico.jpg" alt="图标"></p>
+<p><strong>AlphaGo → AlphaGo Zero → AlphaZero</strong></p>
+<p>2016 年 3 月，在 2 百万人眼前，DeepMind 的 AlphaGo 以 4-1 击败了世界围棋冠军李世石。一台机器学到了人类顶尖的围棋策略，这在以前是难以想象的事情。</p>
+<p>就其自身而言，这已经是了不起的成就了，然而 2017 年 10 月，DeepMind 又往前迈了一大步。</p>
+<p>在其发布的《Mastering the Game of Go without Human Knowledge》（无需人类知识掌握围棋）中，DeepMind 展示了一种新算法 AlphaGo Zero，它以 100-0 的战绩击败的自己的旧版本 AlphaGo。令人难以置信的是，AlphaGo Zero 完全是通过自我博弈学习，从“白板”开始，逐渐找到了能打败 AlphaGo 的策略。创建一个这样的超级人工智能已经完全不需要任何人类专业知识构成的数据库进行训练。</p>
+<p><img src="https://jizhi-10061919.file.myqcloud.com/blog/2c806017f17181390a9a7f4eb0d173d1.jpg" alt="img"></p>
+<p>仅仅 48 天后的 2017 年 12 月 5 日，DeepMind 又发表了另一篇论文《Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm》（用通用强化学习算法自我对弈，掌握国际象棋和将棋），显示 AlphaGo Zero 也能打败国际象棋世界冠军 StockFish 和日本将棋冠军 Elmo。而整个学习过程，从展示给 AlphaGo Zero 这些棋类开始到它成为这两种棋的世界顶尖高手，只用了不到 24 小时。</p>
+<p>在这种情况下，AlphaZero 诞生了——一种无需预先获得人类专业知识就能迅速掌握某些领域技能的通用算法。</p>
+<p><img src="https://jizhi-10061919.file.myqcloud.com/blog/af9f5d5df0bf62bcd069a331a34a97f9.jpg" alt="img"></p>
+<p>对于这项成就，有两个方面很奇妙：</p>
+<p><strong>1.AlphaZero 无需任何人类专业知识作为输入</strong></p>
+<p>这一点的重要性，再强调也不为过。这意味着如果有完善的信息（如果自始至终双方都完全知道下棋状态），AlphaGo Zero 的根本方法可以用到任何棋类游戏中，因为除了该种棋类的规则之外，AI 无需预先学习任何专业知识。</p>
+<p>这就是为何 DeepMind 在发布初篇 AlphaGo Zero 论文后不到 48 天就能发布打败国际象棋和将棋人类冠军的论文。简单说，所需的改变就只有描述棋类机制的输入文件，以及调整与神经网络和蒙特卡洛树搜索相关的高参数。</p>
+<p><strong>算法非常优雅</strong></p>
+<p>即便 AlphaZero 使用了超级复杂的算法，当今世界只有一小部分人能理解，那么它依然算的上是了不起的成就。然而，它的非凡之处就在于论文中的很多理念实际上远比之前的版本简单。其核心思想，就是遵循这些简单的学习口诀一样的东西：</p>
+<ul>
+<li>从内心先将所有可能会出现的场景过一遍，优先选择有希望的路径，同时也思考对手对你的行动最可能做出怎样的反应，并继续探索未知情境。</li>
+<li>抵达不熟悉的状态后，评估一下你认为当前情形对自己是否有利，关联一下前几步的得分，分析走到当前这一步的心理路径。</li>
+<li>在考虑完将来所有的可能性后，采取探索最多的行动。</li>
+<li>在比赛结束时，回溯并评估当时对未来场景出现了哪些误判，相应地优化对这些场景的理解。</li>
+</ul>
+<p>这和你学习下棋的过程是不是很像？当你下了一步坏棋，要么是因为你误判了走这步棋的未来情况，要么你误判了对手可能会怎么下，因此没有考虑到这中可能性。而正是从这两个方面训练 AlphaZero 学习下棋。</p>
+<p><strong>怎样搭建你自己的 AlphaZero</strong></p>
+<p>本文主要是讲解如何搭建AlphaZero，因此假定你已经对AlphaZero的原理有了大致了解。如果不太熟悉的，可预先查阅一下相关资料，可以参考我制作的这篇<a href="https://medium.com/applied-data-science/alphago-zero-explained-in-one-diagram-365f5abf67e0" target="_blank" rel="noopener">速查表</a>或这篇<a href="http://tim.hibal.org/blog/alpha-zero-how-and-why-it-works/" target="_blank" rel="noopener">文章</a>。</p>
+<p><strong>代码</strong></p>
+<p>将 Github 上的代码库复制下来</p>
+<p><a href="https://github.com/AppliedDataSciencePartners/DeepReinforcementLearning" target="_blank" rel="noopener">https://github.com/AppliedDataSciencePartners/DeepReinforcementLearning</a></p>
+<p>我后面会引用这里面的代码。</p>
+<p>要开始学习过程，首先在 run.ipynb Jupyter notebook 中运行前两个面板。一旦它创建了足够的博弈情景，神经网络就开始训练了。</p>
+<p>再通过自我博弈和训练，它会越来越擅长在任何位置预测博弈值和下一步棋的动作，从而做出更好的决策，越来越聪明。</p>
+<p>现在我们更详细地看看代码，并展示一些结果，证明 AI 随着时间推移越来越强。</p>
+<p>注意：这是我自己根据 DeepMind 所发论文对 AlphaZero 的理解，如有不当之处，敬请指正。</p>
+<p><strong>《四子连珠》</strong></p>
+<p>我们的算法要学习玩的游戏是《四子连珠》（Connect4）。虽然它不像围棋那么复杂，但是仍然总共有 4,531,985,219,092 个游戏位置。</p>
+<p><img src="https://jizhi-10061919.file.myqcloud.com/blog/4b2549a0552c570ae0f3646877de578a.jpg" alt="img"></p>
+<p>游戏的规则很直接：<strong>玩家轮流在任何一栏的顶部放置自己的颜色的棋子。谁最先在垂直、水平或对角线上都放置了同一种颜色，则获胜。如果全部网格都被填满，仍然没有出现同一颜色的棋子出现在同一条线上，则平局。</strong></p>
+<p>以下是组成代码库的关键文件的总结：</p>
+<p><strong>game.py</strong></p>
+<p>该文件包含《四子连珠》的游戏规则。</p>
+<p>每个方格分配一个从0到41的数字，如图：</p>
+<p><img src="https://jizhi-10061919.file.myqcloud.com/blog/d57ddcb52c9711951aa3e3a58909e7b0.jpg" alt="img"></p>
+<p>此文件给出了根据给定动作，从一种游戏状态转移至另一种的逻辑。例如，给定空棋盘和 38 号动作，takeAction 方法返回到一个新的游戏状态，起始玩家的位置则位于中间列的底部。</p>
+<p>你可以用任何符合相同 API 的游戏文件替换 game.py 文件，原则上算法将根据你给它的规则通过自我博弈学习游戏策略。</p>
+<p><strong>run.ipynb</strong></p>
+<p>它包含了开始学习过程的代码。它会加载游戏规则，然后迭代算法的主循环，其中包含三个阶段：</p>
+<ul>
+<li>自我博弈</li>
+<li>再训练神经网络</li>
+<li>评估神经网络</li>
+</ul>
+<p>在这一循环中有两个 agent：best_player 和 current_player。</p>
+<p>其中 best_player 包含了性能最好的神经网络，用于生成自我博弈记忆。Current_player 然后会根据这些记忆再训练其神经网络，接着与 best_player 进行对弈。如果它赢了， best_player 中的神经网络就会换成 current_player 中的神经网络，循环再次开始。</p>
+<p><strong>agent.py</strong></p>
+<p>它包含 Agent类（游戏中的一个玩家）。每个玩家都用自己的神经网络和蒙特卡罗搜索树进行初始化。</p>
+<p>Simulate 方法运行蒙特卡罗树搜索过程。具体说来，agent 移动至树的一个叶节点，用其神经网络评估该节点，然后通过树回填（backfill）该节点的值。</p>
+<p>Act 方法多次重复 simulate 方法，以理解从当前位置移动至哪个位置是最有利的。然后它将选定的动作返回给游戏，以执行该游戏。</p>
+<p>replay 方法使用之前的游戏记忆再训练神经网络。</p>
+<p><strong>Model.py</strong></p>
+<p>该文件包含了 Residual_CNN 类，它定义如何构建神经网络的实例。</p>
+<p><img src="https://jizhi-10061919.file.myqcloud.com/blog/966befa2185bedf16e584760bd255ead.jpg" alt="用Keras搭建的一个残留卷积神经网络样例">用Keras搭建的一个残留卷积神经网络样例</p>
+<p>其采用 AlphaGo Zero 论文中的神经网络架构的压缩版本——即一个卷积层，接着是一些残留层，然后分解成值端（value head）和策略端（policy head）。</p>
+<p>卷积过滤器的深度和数量可以在 config 文件中设置。</p>
+<p>Keras 程序库用于搭建神经网络，使用 TensorFlow 后端。</p>
+<p>要在神经网络中查看单个卷积过滤和密集连接的层，可在 run.ipynb notebook 中运行以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">current_player.model.viewLayers()</span><br></pre></td></tr></table></figure>
+<p><img src="https://jizhi-10061919.file.myqcloud.com/blog/0dd3ac8572f1027e3ed78ff4b65e5551.jpg" alt="神经网络中的卷积过滤器">神经网络中的卷积过滤器</p>
+<p><strong>MCTS.py</strong></p>
+<p>它包含节点、边缘和 MCTS 类，它们构成了一个蒙特卡洛搜索树。</p>
+<p>MCTS 类包含前面提到的 moveToLeaf 和 backFill 方法，并且边缘类的实例存储每个可能的移动的统计数据。</p>
+<p><strong>config.py</strong></p>
+<p>这是你设置影响算法的关键参数的地方。</p>
+<p><img src="https://jizhi-10061919.file.myqcloud.com/blog/394b9da60d9589070f35d7177416a3d8.jpg" alt="img"></p>
+<p>调整这些变量将影响算法的运行时间、神经网络的准确性和算法的整体成功。上面的参数产生了一个高质量的《四子连珠》玩家，但是要花很长时间才能完成。为了加快算法的速度，请尝试以下参数。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/2/8/16174b0000501bb1?w=244&amp;h=82&amp;f=jpeg&amp;s=6874" alt="img"></p>
+<p><strong>funcs.py</strong></p>
+<p>它包含了将两个 agent 进行匹配的 playMatches 和 playMatchesBetweenVersions 函数。</p>
+<p>如果要和你创建的玩家对战，请运行以下代码(它也在 run.ipynb notebook 中)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">from game import Game</span><br><span class="line">from funcs import playMatchesBetweenVersions</span><br><span class="line">import loggers as lg</span><br><span class="line">env = Game()</span><br><span class="line">playMatchesBetweenVersions(</span><br><span class="line">env</span><br><span class="line">, 1  # the run version number where the computer player is located</span><br><span class="line">, -1 # the version number of the first player (-1 for human)</span><br><span class="line">, 12 # the version number of the second player (-1 for human)</span><br><span class="line">, 10 # how many games to play</span><br><span class="line">, lg.logger_tourney # where to log the game to</span><br><span class="line">, 0  # which player to go first - 0 for random</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><strong>initialise.py</strong></p>
+<p>当你运行该算法时，所有的模型和内存文件都保存在 run 文件夹中，在根目录中。</p>
+<p>稍后要从这个检查点重新启动算法，将 run 文件夹转移到 run_archive 文件夹中，将一个运行编号（run number）附加到文件夹名字上。然后，将运行编号、模型版本号和 memory 版本号输入到 initialise.py 文件中，run_archive 文件夹中相关文件的位置对应。然后从这个检查点开始，像往常一样运行该算法。</p>
+<p><strong>memory.py</strong></p>
+<p>这是 Memory class 的一个实例，用以存储之前游戏的记忆，该算法会用它们重新训练 current_player 的神经网络。</p>
+<p><strong>loss.py</strong></p>
+<p>此文件包含一个自定义损失函数，用以在传递到交叉熵损失函数之前对非法移动的预测进行掩码处理。</p>
+<p><strong>settings.py</strong></p>
+<p>run和run_archive 文件夹的位置。</p>
+<p><strong>logger.py</strong></p>
+<p>这个文件包含一个自定义的损失函数，它在传递到交叉熵损失函数之前，掩盖了非法移动的预测。</p>
+<p><strong>settings.py</strong></p>
+<p>run 和 run_archive 文件夹的位置。</p>
+<p><strong>loggers.py</strong></p>
+<p>日志文件被保存到 run 文件夹中的 log 文件夹。要打开日志记录，可将该文件中 logger_disabled 变量的值设置为“False”。查看日志文件将帮助你了解算法的工作原理，并了解它的“思想”。例如，下面是 logger.mcts 文件中的一个样例：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/2/8/16174b104cecf8e2?w=1000&amp;h=1012&amp;f=jpeg&amp;s=439756" alt="img"></p>
+<p>同样来自 logger.tourney 文件的一个样例，你可以在评估阶段看到每个与移动相关的概率：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/2/8/16174b135b6b4dde?w=1000&amp;h=381&amp;f=jpeg&amp;s=183358" alt="img"></p>
+<p><strong>结果</strong></p>
+<p>经过几天的训练，小批量迭代次数后得出以下损失图表:</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/2/8/16174b197c3fe043?w=781&amp;h=512&amp;f=jpeg&amp;s=61188" alt="img"></p>
+<p>最上面的线是策略端的误差(MCTS的交叉熵移动概率与神经网络的输出相对应)。下面的线是值端的误差(实际博弈值与神经网络值之间的均方差)。中间的线是两者的平均值。</p>
+<p>很明显，神经网络在预测每个博弈状态的价值和可能的下一步动作方面做得越来越好。为了展示这一结果如何变得更加强大，我在17个玩家之间进行了一场联赛，从首次迭代的神经网络到第 49 次迭代，每对搭档都对战了两次，两名玩家都有机会先玩。</p>
+<p>以下是最终排名:</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/2/8/16174b1d216f9034?w=914&amp;h=1296&amp;f=jpeg&amp;s=178259" alt="img"></p>
+<p>显然，后期版本的神经网络优于早期版本，赢得了它们之间的大部分比赛。另外，学习似乎并没有达到饱和，因为随着训练时间增加，玩家变得越来越强大，并且学习的策略越来越复杂。</p>
+<p>例如，随着时间的推移，神经网络所偏爱的一个明确策略就是尽早枪战中心栏。观察算法的第 1 个版本和第 30 个版本之间的差别:</p>
+<p><strong>神经网络的第一个版本</strong></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/2/8/16174b258bc6f4a1?w=1000&amp;h=1282&amp;f=jpeg&amp;s=598482" alt="img"></p>
+<p><strong>神经网络的第三十个版本</strong></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/2/8/16174b2b685ce82c?w=1000&amp;h=1352&amp;f=jpeg&amp;s=633602" alt="img"></p>
+<p>这是一个很好的策略，因为很多下棋的线路都需要中间栏——要求尽量不要让对手利用这一点。而神经网络在没有任何人类知识输入的情况下，已经学会了这一点。</p>
+<p><strong>学习一种不同的博弈游戏</strong></p>
+<p>在 games 文件夹里有个 game.py 文件，用于一个叫做 Metasquares 的游戏。这个游戏是在网格中放置 X 和 O 标记，以尝试形成不同大小的方块。方块越大，玩家分数越高。当网格被填满时，得分最多的玩家获胜。</p>
+<p><img src="https://jizhi-10061919.file.myqcloud.com/blog/313a3d8dfe11bb4a8c7c7577f5e1091f.jpg" alt="img"></p>
+<p>如果你将《四子连珠》的 game.py 文件替换为 Metasquare 的 game.py 文件，那么我们上面使用的算法就会学习玩 Metasquares 游戏。</p>
+<p>换言之，通过这种方式，我们搭建的模型可以学习任何一种博弈游戏。</p>
 
       
     </div>
@@ -588,17 +619,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -675,22 +697,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取数据"><span class="nav-number">1.</span> <span class="nav-text">获取数据</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
